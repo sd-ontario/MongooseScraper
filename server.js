@@ -34,7 +34,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
-require("./controllers/scraper")(app);
+
 // Import routes and give the server access to them.
 require("./routes/html")(app);
 
@@ -46,9 +46,9 @@ const cheerio = require("cheerio");
 const db = require("./models");
 
 
-module.exports = function(app) {
 
-    console.log("\n******************************************\n" +
+
+console.log("\n******************************************\n" +
             "Look at the image of every award winner in \n" +
             "one of the pages of `nytimes.com`. Then,\n" +
             "grab the image's source URL." +
@@ -152,7 +152,7 @@ app.post("/articles/:id", function(req, res) {
 });
 
 
-};
+
 
 //SCRAPER ENDS HERE
 //***********************************************************************8 */
