@@ -23,4 +23,8 @@ const articleSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref:"note"
     }
-})
+});
+
+const article = mongoose.model("article", articleSchema);
+
+module.exports = article;
