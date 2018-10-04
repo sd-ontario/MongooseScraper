@@ -1,6 +1,5 @@
-// Require mongoose
-var mongoose = require("mongoose");
-// Create a schema class
+const mongoose = require("mongoose");
+
 var Schema = mongoose.Schema;
 
 // Create the Note schema
