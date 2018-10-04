@@ -45,12 +45,14 @@ app.get("/scrape", function(req, res) {
 
     const $ = cheerio.load(html);
 
+    const url = "https://www.nytimes.com";
+
     $("article").each(function(i, element) {
 
         let result = {};
 
         result.title = $(element).find("h2").text();
-        result.link = $(element).find("a"). attr("href");
+        result.link = url.append($(element).children("h2").children("a").attr("href"));
 
     function fillSummary(){
 
