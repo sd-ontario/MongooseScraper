@@ -1,9 +1,18 @@
 $(document).ready(function() {
 
-    $.getJSON("/articles", function(data){
-        for(let i = 0; i < data.length; i++)
-        console.log(data[i]);
-        let hbsObject = data[i];
-        res.render("home", hbsObject);
+    $("#scrape").on("click", function(event){
+        event.preventDefault();
+
+        $.ajax({
+            method: "GET",
+            url: "/articles"
+        }).then(function(data){
+
+            let source = $("#article-list").html();
+            let template = Handlebars.compile(source);
+            let data = data;
+
+            $("body").append(template(data));
+        });
     });
 });

@@ -4,14 +4,24 @@
 
 <div class="container">
     <div class="card">
-        <ul class="article-list">
-            {{#each}}
-        <a href="{{this.link}}">{{this.title}}</a>
-        <p>{{this.summary}}</p>
-        {{/each}}
+        <ul id ="article-list">
+
+        <li>
+            {{#article}}
+        <a href= "{{link}}">{{title}}</a>
+        <p>{{summary}}</p>
+        {{/article}}
+
+        </li>
 
         </ul>
         
     </div>
     
 </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="/public/app.js"></script>
